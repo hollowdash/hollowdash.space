@@ -1,0 +1,103 @@
+.main{
+	line-height: 0.3;
+	background-image: url("./assets/images/bg.png");
+  background-color: black;
+}
+
+.HelloTitle{
+	text-align: center;
+	padding-top: 30px; 
+	color: white;
+	font-family: "Zen Dots";
+	font-size: 50px;
+	position: relative;
+	margin: 0;
+}
+
+.NameTitle{
+	text-align: center;
+	color: white;
+	font-family: monospace;
+	font-size: 30px;
+	position: relative;
+	margin: 0;
+}
+
+.Intro{
+	position: relative;
+    top: 100px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.AboutMe {
+	font-family: "Zen Dots";
+	font-size: 70px;
+  position: absolute;
+  top: 125px;
+  right: 800px;
+}
+
+.AboutMeText {
+	line-height: 35px;
+	font-family: monospace;
+	font-size: 30px;
+  position: absolute;
+  top: 250px;
+  left: 600px;
+	padding-right: 100px
+}
+
+.CircleImage {
+  position: relative;
+  text-align: left;
+  color: white;
+}
+
+.CircleImage2 {
+	transform: rotateY(180deg);
+	padding-top: 200px;
+  position: relative;
+  text-align: left;
+  color: white;
+}
+
+.Projects {
+	transform: rotateY(180deg);
+font-family: "Zen Dots";
+	font-size: 70px;
+  position: absolute;
+  top: 350px;
+  right: 800px;
+}
+
+.Bonzai {
+	text-align: center;
+	transform: rotateY(180deg);
+	font-family: "Zen Dots";
+	font-size: 50px;
+  position: absolute;
+  top: 500px;
+  right: 200px;
+}
+
+.Astraloom {
+	text-align: center;
+	transform: rotateY(180deg);
+	font-family: "Zen Dots";
+	font-size: 50px;
+  position: absolute;
+  top: 545px;
+  right: 150px;
+}
+
+@keyframes fadeIn {
+    0% {
+        top: -50px; /* Start above the screen */
+        opacity: 0; /* Fully transparent */
+    }
+    100% {
+        top: 0; /* End at normal position */
+        opacity: 1; /* Fully opaque */
+    }
+}
