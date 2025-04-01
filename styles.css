@@ -72,6 +72,8 @@ font-family: "Zen Dots";
 }
 
 .Bonzai {
+	transition: color 0.3s ease-out;
+	color: grey;
 	text-align: center;
 	transform: rotateY(180deg);
 	font-family: "Zen Dots";
@@ -81,7 +83,13 @@ font-family: "Zen Dots";
   right: 200px;
 }
 
+.Bonzai:hover{
+	color:white;
+}
+
 .Astraloom {
+	transition: color 0.3s ease-out;
+	color:grey;
 	text-align: center;
 	transform: rotateY(180deg);
 	font-family: "Zen Dots";
@@ -89,6 +97,9 @@ font-family: "Zen Dots";
   position: absolute;
   top: 545px;
   right: 150px;
+}
+.Astraloom:hover{
+	color:white;
 }
 
 @keyframes fadeIn {
