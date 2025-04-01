@@ -1,5 +1,5 @@
 .main{
-	line-height: 0.3;
+	line-height: 0.3vw;
 	background-image: url("./assets/images/bg.png");
   	background-color: black;
 }
@@ -9,7 +9,7 @@
 	padding-top: 30px; 
 	color: white;
 	font-family: "Zen Dots";
-	font-size: 50px;
+	font-size: 5vw;
 	position: relative;
 	margin: 0;
 }
@@ -18,7 +18,7 @@
 	text-align: center;
 	color: white;
 	font-family: monospace;
-	font-size: 30px;
+	font-size: 3vw;
 	position: relative;
 	margin: 0;
 }
@@ -32,7 +32,7 @@
 
 .AboutMe {
 	font-family: "Zen Dots";
-	font-size: 70px;
+	font-size: 7vw;
 	position: relative;
 	text-align: left;
   top:150;
@@ -42,7 +42,7 @@
 .AboutMeText {
 	line-height: 35px;
 	font-family: monospace;
-	font-size: 15px;
+	font-size: 1.5vw;
   	position: absolute;
   	top: 50%; /* Adjust for vertical spacing */
   	left: 75%;
@@ -67,7 +67,7 @@
 .Projects {
 	transform: rotateY(180deg);
 	font-family: "Zen Dots";
-	font-size: 70px;
+	font-size: 7vw;
 	position: relative;
 	text-align: right;
   top:150;
@@ -80,7 +80,8 @@
 	text-align: center;
 	transform: rotateY(180deg);
 	font-family: "Zen Dots";
-	font-size: 30px;
+	font-size: 3vw;
+	line-height: 0.5vw;
   	position: relative;
 	left:225;
 	top:290
@@ -96,7 +97,7 @@
 	text-align: center;
 	transform: rotateY(180deg);
 	font-family: "Zen Dots";
-	font-size: 30px;
+	font-size: 3vw;
   position: relative;
 	top: 250;
 	left:225;
