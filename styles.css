@@ -31,13 +31,13 @@
 
 @keyframes fadeIn {
     0%{
-        top: 100%;
+        top: 30%;
         left: 30%;
         transform: translate(-50%, -50%);
         opacity: 0;
     }
     100%{
-        top: 130%;
+        top: 50%;
         left: 30%;
         transform: translate(-50%, -50%);
         opacity: 1;
