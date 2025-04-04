@@ -18,7 +18,7 @@
 
 .picture, img{
     position: fixed;
-    top: 50%;
+    top: %;
     left: 90%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
@@ -37,7 +37,7 @@
         opacity: 0;
     }
     100%{
-        top: 50%;
+        top: 70%;
         left: 30%;
         transform: translate(-50%, -50%);
         opacity: 1;
