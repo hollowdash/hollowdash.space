@@ -1,0 +1,24 @@
+.main {
+    background-image:url(../assets/images/GridPattern.png);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center; 
+}
+
+.container {
+    position: relative;
+    height: 50vw;
+    width: 50vw;
+}
+
+.wip{
+    font-size: 1.5vw;
+    font-family: "JetBrains Mono";
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
