@@ -35,6 +35,7 @@
 .bottom{
     font-family: "JetBrains Mono";
     color:rgb(177, 177, 177);
+    overflow: hidden;
 }
 
 .games{position:absolute; left: 3vw;bottom: 0px; transform: translateY(100%); font-size: 1.3vw; transition: color 0.3s ease; animation: fadeInUp 1s forwards; animation-delay: 1s;}
