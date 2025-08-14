@@ -1,0 +1,40 @@
+body {
+    background-color: #ffffff;
+    margin: 0;
+    font-family: 'Zen Dots', sans-serif;
+}
+
+/* Top bar */
+.top-bar {
+    padding: 1vw 2vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Gradient heading */
+#hollow {
+    color: white;
+    padding: 0.5vw 1vw;
+    border-radius: 1vw;
+    border: 0.3vw solid transparent;
+    font-size: clamp(0.8rem, 3vw, 1.5rem);
+    display: inline-block;
+    background: linear-gradient(to right, #448dec, #6f3aeb) border-box;
+    -webkit-background-clip: padding-box, border-box;
+    background-clip: padding-box, border-box;
+    background-origin: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#working {
+    text-align: center;
+    color: #cecece;
+    width: 50%;
+    height: 50%; /* just for visibility */
+}

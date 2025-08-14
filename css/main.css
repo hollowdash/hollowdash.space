@@ -1,0 +1,116 @@
+body {
+    background-color: #ffffff;
+    margin: 0;
+    font-family: 'Zen Dots', sans-serif;
+}
+
+/* Top bar */
+.top-bar {
+    padding: 1vw 2vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Gradient heading */
+#hollow {
+    color: white;
+    padding: 0.5vw 1vw;
+    border-radius: 1vw;
+    border: 0.3vw solid transparent;
+    font-size: clamp(0.8rem, 3vw, 1.5rem);
+    display: inline-block;
+    background: linear-gradient(to right, #448dec, #6f3aeb) border-box;
+    -webkit-background-clip: padding-box, border-box;
+    background-clip: padding-box, border-box;
+    background-origin: border-box;
+}
+
+/* Pancake menu */
+.pancake-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2.5vw;
+    height: 2vw;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+}
+
+.pancake-menu div {
+    height: 0.3vw;
+    border-radius: 0.15vw;
+    background: linear-gradient(to right, #448dec, #6f3aeb);
+    transition: background 0.5s ease; /* smooth fade in/out */
+}
+
+/* White when menu active */
+.pancake-menu.active div {
+    background: white;
+}
+
+/* Fullscreen circular menu overlay */
+.menu-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: linear-gradient(to right, #448dec, #6f3aeb);
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 5;
+}
+
+/* Menu open state */
+.menu-overlay.open {
+    width: 200vw;
+    height: 200vw;
+}
+
+/* Submenu list */
+.menu-overlay ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease 0.3s;
+}
+
+.menu-overlay.open ul {
+    opacity: 1;
+}
+
+.menu-overlay li {
+    font-size: clamp(1rem, 4vw, 2rem);
+    color: white;
+    margin: 1.5vw 0;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
+    padding-bottom: 0.5vw;
+    cursor: pointer;
+}
+
+.menu-overlay li:last-child {
+    border-bottom: none;
+}
+
+/* Submenu links and hover effect */
+.menu-overlay li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    width: 100%;
+    padding: 0.5vw 0;
+    transition: opacity 0.3s ease;
+}
+
+.menu-overlay li a:hover {
+    opacity: 0.7; /* fade effect on hover */
+}
