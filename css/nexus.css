@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(14, 14, 14);
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.top_rooms_tab {
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid rgba(255, 255, 255, 0.65);
+    border-radius: 20px;
+    margin: 12px;
+    flex-shrink: 0;
+}
+
+#room_one, #room_two, #room_three {
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    border-style: none;
+    background-color: transparent;
+    padding: 10px 20px;
+    flex: 1;
+    cursor: pointer;
+}
+@media (max-width: 600px) {
+    #room_one, #room_two, #room_three {
+        padding: 10px 10px;
+        font-size: 14px;
+    }
+}
+
+#room_one:hover, #room_two:hover, #room_three:hover {
+    font-weight: bold;
+}
+
+#messages_container {
+    border: 2px solid rgba(255, 255, 255, 0.65);
+    border-radius: 20px;
+    margin: 0 12px;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: rgb(25, 25, 25);
+    flex: 1;
+}
+
+.message {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.bottom_input_container {
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+    flex-shrink: 0;
+}
+
+#chatbox_input {
+    background-color: transparent;
+    padding: 12px;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.65);
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    flex: 1;
+}
+
+#image_button, #settings_button {
+    width: 50px;
+    padding: 12px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.65);
+    border-radius: 20px;
+}
+
+#typing_indicator {
+    padding: 8px 20px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+    min-height: 20px;
+    height: 20px;
+}
