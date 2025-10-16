@@ -2,7 +2,6 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
 import { getDatabase, ref, push, onChildAdded, off, set, onValue, onDisconnect } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
 
-// Your Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyCWDvh4HgUcCDgRRQYRzLuvzVWlphDbphc",
   authDomain: "nexuschat-a0b3e.firebaseapp.com",
@@ -13,7 +12,6 @@ const firebaseConfig = {
   appId: "1:308235957831:web:387f210e959f0d79452362"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
@@ -30,7 +28,6 @@ var current_Chatroom = 1;
 var currentMessagesRef = null;
 var nexus_username = localStorage.getItem('nexuschat_username') || 'User' + Math.floor(Math.random() * 1000);
 
-// Chat input listener
 chatboxInput.addEventListener('keydown', function(e) {
   if (e.key === 'Enter') {
     e.preventDefault();
@@ -47,7 +44,6 @@ chatboxInput.addEventListener('keydown', function(e) {
   }
 });
 
-let user_interact;
 let typingTimeout;
 chatboxInput.addEventListener('input', function() {
   const typingRef = ref(database, 'room' + current_Chatroom + '/typing/' + nexus_username)
@@ -56,14 +52,12 @@ chatboxInput.addEventListener('input', function() {
   onDisconnect(typingRef).remove();
 
   clearTimeout(typingTimeout);
-  user_interact = true;
 
   typingTimeout = setTimeout(function(){
     set(typingRef, null);
   }, 5000);
 });
 
-// Room button listeners
 roomOneButton.addEventListener('click', function() {
   current_Chatroom = 1;
   document.getElementById('messages_container').innerHTML = '';
@@ -82,12 +76,10 @@ roomThreeButton.addEventListener('click', function() {
   listenToRoom(3);
 });
 
-// Image button listener
 imageButton.addEventListener('click', function() {
   document.getElementById('file-input').click();
 });
 
-// Settings button listener
 settingsButton.addEventListener('click', function() {
   const newUsername = prompt('Enter your username:', nexus_username);
   if (newUsername && newUsername.trim() !== '') {
@@ -103,7 +95,6 @@ function scrollToBottom() {
 }
 
 function listenToRoom(roomNumber) {
-  // Remove the old listener if it exists
   if (currentMessagesRef) {
     off(currentMessagesRef);
   }
@@ -132,21 +123,10 @@ function listenToRoom(roomNumber) {
     }
   });
   
-  // After initial messages load, set flag to false
   setTimeout(() => {
     isInitialLoad = false;
   }, 1000);
   
-  listenForTyping(roomNumber);
-}
-  
-  // After initial messages load, set flag to false
-  setTimeout(() => {
-    isInitialLoad = false;
-  }, 1000);
-    
-  });
-
   listenForTyping(roomNumber);
 }
 
