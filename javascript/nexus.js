@@ -1,6 +1,6 @@
 // Import Firebase - both from CDN
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
-import { getDatabase, ref, push, onChildAdded, off, set, onValue } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
+import { getDatabase, ref, push, onChildAdded, off, set, onValue, onDisconnect } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
 
 // Your Firebase config
 const firebaseConfig = {
@@ -52,6 +52,8 @@ let typingTimeout;
 chatboxInput.addEventListener('input', function() {
   const typingRef = ref(database, 'room' + current_Chatroom + '/typing/' + nexus_username)
   set(typingRef, true);
+
+  onDisconnect(typingRef).remove();
 
   clearTimeout(typingTimeout);
   user_interact = true;
@@ -105,14 +107,13 @@ function listenToRoom(roomNumber) {
   if (currentMessagesRef) {
     off(currentMessagesRef);
   }
-  
-  // Create new reference
+
   currentMessagesRef = ref(database, 'room' + roomNumber + '/messages');
   
-  // Listen for messages
+  let isInitialLoad = true;
+  
   onChildAdded(currentMessagesRef, (snapshot) => {
     const messageData = snapshot.val();
-
     const date = new Date(messageData.timestamp);
     const timeString = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     
@@ -122,14 +123,27 @@ function listenToRoom(roomNumber) {
     
     const container = document.getElementById('messages_container');
     container.appendChild(messageDiv);
-
     scrollToBottom();
-
-    if (messageData.username !== nexus_username) {
+    
+    if (!isInitialLoad && messageData.username !== nexus_username) {
       messageSound.play().catch((err) => {
         console.warn('Sound playback blocked or failed:', err);
       });
     }
+  });
+  
+  // After initial messages load, set flag to false
+  setTimeout(() => {
+    isInitialLoad = false;
+  }, 1000);
+  
+  listenForTyping(roomNumber);
+}
+  
+  // After initial messages load, set flag to false
+  setTimeout(() => {
+    isInitialLoad = false;
+  }, 1000);
     
   });
 
