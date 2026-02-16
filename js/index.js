@@ -5,11 +5,11 @@ function getRandomIntegerExclusive(min, max) {
 }
 
 const backgroundImages = [
-    "assets/backgrounds/forest.jpg",
-    "assets/backgrounds/japan.jpg",
-    "assets/backgrounds/purple.jpg",
-    "assets/backgrounds/japan2.jpg",
-    "assets/backgrounds/aurora.jpg"
+    "../assets/backgrounds/forest.jpg",
+    "../assets/backgrounds/japan.jpg",
+    "../assets/backgrounds/purple.jpg",
+    "../assets/backgrounds/japan2.jpg",
+    "../assets/backgrounds/aurora.jpg"
 ];
 const titleTextOptions= [
     "hollow",
