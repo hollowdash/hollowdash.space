@@ -1,0 +1,222 @@
+/* Colors */
+:root{
+    --primary-gray: #1e1e1e;
+    --accent-color: #ffe270;
+    --error-color: #ff5c5c;
+}
+
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Full‑viewport base */
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.image-container {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('assets/background.jpg');
+    background-size:cover;
+    opacity: 0.1;
+    z-index: -100;
+}
+ 
+/* Body styling */
+body {
+    color: white;
+    background-color: var(--primary-gray);
+    font-family: "Lexend";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.error-banner{
+    display: flex;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    background-color: var(--error-color);
+    padding: 20px;
+    justify-content: center;
+    font-size: 2vw;
+}
+
+/* Main flex container */
+.middle-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: min(3rem, 8vw);
+    max-width: 95vw;
+    max-height: 95vh;
+    animation: slideDown 1s;
+}
+
+/* Left text column */
+.left-content {
+    width: min(40vw, 350px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.left-content h1 {
+    margin: 0 0 0.5em 0;
+    font-size: clamp(1.25rem, 4vw, 2rem);
+    color: var(--accent-color);
+    font-weight: bolder;
+}
+
+.left-content p {
+    font-size: clamp(0.9rem, 1.5vw, 1.25rem);
+    line-height: 1.4;
+    margin: 0;
+    font-family: "Space Grotesk";
+}
+
+/* Right grid of buttons */
+.right-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: min(1rem, 3vw);
+    align-items: stretch;
+    user-select: none;
+}
+
+.right-content button {
+    height: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.5rem;
+    font: inherit;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    color: white;
+}
+
+.right-content button img {
+    width: 3.2em;
+    height: 3.2em;
+    object-fit: contain;
+}
+
+.right-content button:hover {
+    border: 2px var(--accent-color) dotted;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.right-content button:active {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.footer-buttons {
+    opacity: 0;
+    position: fixed;
+    left: 50%;
+    bottom: 1rem;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    animation: slideUp 1s 0.5s forwards;
+    user-select: none;
+}
+
+.footer-buttons button {
+    position: relative;
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    background-color: rgba(128, 128, 128, 0.2);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.5s ease-out;
+}
+
+.footer-buttons button img {
+    width: 2em;
+    height: 2em;
+    object-fit: contain;
+}
+
+.footer-buttons button:hover {
+    transform: scale(1.1);
+}
+
+.footer-buttons button:hover::before {
+    content: '';
+    position: absolute;
+    inset: -0.65em;
+    border: 0.2rem dotted var(--accent-color);
+    border-radius: 50%;
+    z-index: -1;
+    animation: spin 2s linear infinite;
+}
+
+.displayFlex {
+    animation: fadeInOut 3s forwards;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes slideDown{
+    0%{
+        opacity: 0%;
+        transform: translateY(-10%);
+    }
+    100%{
+        opacity: 100%;
+        transform: translateY(0%);
+    }
+}
+@keyframes slideUp{
+    0%{
+        opacity: 0%;
+        transform: translate(-50%, 300%);
+    }
+    100%{
+        opacity: 100%;
+        transform: translate(-50%, 0%);
+    }
+}
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        visibility: visible;
+    }
+    30% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
